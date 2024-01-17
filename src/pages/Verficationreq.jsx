@@ -85,7 +85,24 @@ const template2 = () => {
   );
 };
 
+const template3 = (employeesData) => {
+  // Determine profile status based on the index (alternating between 'complete' and 'incomplete')
+  const profileStatus = employeesData.EmployeeID % 2 === 0 ? 'complete' : 'incomplete';
 
+  return (
+    <p
+      style={{
+        textAlign:'center',
+        color: profileStatus === 'complete' ? 'green' : 'red',
+        border: 'none',
+        cursor: 'pointer',
+        fontSize:'small',
+      }}
+    >
+      {profileStatus}
+    </p>
+  );
+};
 
 
 
@@ -112,6 +129,7 @@ const Verficationreq = () => {
           {employeesGrid.map((item, index) => (
             <ColumnDirective key={index} {...item} />
           ))}
+           <ColumnDirective headerText='Status'  headerTextAlign="center" headerTextOverflow="Ellipsis" template={template3} width="150"></ColumnDirective>
            <ColumnDirective headerText='Profile'  headerTextAlign="center" headerTextOverflow="Ellipsis" template={template2} width="150"></ColumnDirective>
           <ColumnDirective headerText='Actions'  headerTextAlign="center" headerTextOverflow="Ellipsis" template={template} width="150"></ColumnDirective>
         </ColumnsDirective>

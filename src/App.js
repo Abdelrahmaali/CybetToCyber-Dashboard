@@ -4,7 +4,7 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings} from './components';
-import { Home, Verficationreq,  Experts, Stacked, Pyramid, Clients,  Line, Area, Bar, Pie, Financial } from './pages';
+import { Home, Verficationreq,  Experts, Stacked, Pyramid, Clients,  Line, Area, Bar, Pie, Financial, Requests } from './pages';
 import Postreq from './pages/Postreq';
 
 
@@ -87,8 +87,7 @@ const App = () => {
 
                 {/* pages  */}
                
-                <Route path="/verification-requests" element={<Verficationreq />} />
-                <Route path='/Post-requests' element={<Postreq />} />
+                <Route path='/Requests' element={<Requests />} />
                 <Route path="/experts" element={<Experts />} />
                 <Route path="/clients" element={<Clients />} />
 
